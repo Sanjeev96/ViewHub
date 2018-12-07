@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home-tab',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeTabComponent implements OnInit {
 
-  // tslint:disable-next-line:no-inferrable-types
+
   public newsMovie = 'Movie News';
   public newsTvshows = 'Tv-Show News';
 
 
-  constructor() { }
+  constructor(private dataMedia: DataService) { }
 
   ngOnInit() {
+this.dataMedia.getTrendingMovies();
+
   }
 
 }
