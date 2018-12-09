@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home-tab',
@@ -12,11 +13,15 @@ export class HomeTabComponent implements OnInit {
   public newsMovie = 'Movie News';
   public newsTvshows = 'Tv-Show News';
 
+  public trendingMovies: any = [];
+
 
   constructor(private dataMedia: DataService) { }
 
   ngOnInit() {
-this.dataMedia.getTrendingMovies();
+this.dataMedia.getTrendingMovies()
+.subscribe(data => this.trendingMovies = data);
+console.log('fingers crossed', this.trendingMovies);
 
   }
 
