@@ -19,10 +19,8 @@ export class HomeTabComponent implements OnInit {
   constructor(private dataMedia: DataService) { }
 
   ngOnInit() {
-this.dataMedia.getTrendingMovies()
-.subscribe(data => this.trendingMovies = data);
-console.log('fingers crossed', this.trendingMovies);
+    this.dataMedia.getTrendingMovies()
+      .subscribe(data => console.log(data));
 
   }
-
 }
