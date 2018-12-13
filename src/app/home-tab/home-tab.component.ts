@@ -20,7 +20,10 @@ export class HomeTabComponent implements OnInit {
 
   ngOnInit() {
     this.dataMedia.getTrendingMovies()
-      .subscribe(data => console.log(data));
+      .subscribe(data => {
+        this.trendingMovies = data['results'];
+        console.log(this.trendingMovies);
+      });
 
   }
 }

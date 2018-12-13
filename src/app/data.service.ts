@@ -9,25 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
+  public moviesTrending_Url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=10472e5b920186c224c45d801066d9aa';
+  public tvTrending_Url = 'https://api.themoviedb.org/3/trending/tv/week?api_key=10472e5b920186c224c45d801066d9aa';
+
 
   constructor(private httpClient: HttpClient) { }
 
   // Receive Observable and cast into trending
   getTrendingMovies(): Observable<ITrendingMovies[]> {
     return this.httpClient.get<ITrendingMovies[]>
-      ('https://api.themoviedb.org/3/trending/movie/week?api_key=10472e5b920186c224c45d801066d9aa');
+      (this.tvTrending_Url);
 
 
-
-    // .subscribe(
-    //   (data: any[]) => {
-    //     console.log(data);
-    //   }
-    // );
   }
 
   getTrendingTvShows() {
-    return this.httpClient.get('https://api.themoviedb.org/3/trending/tv/week?api_key=10472e5b920186c224c45d801066d9aa');
+    return this.httpClient.get(this.tvTrending_Url);
   }
 }
 
