@@ -16,9 +16,9 @@ export class DataService {
   constructor(private httpClient: HttpClient) { }
 
   // Receive Observable and cast into trending
-  getTrendingMovies(): Observable<ITrendingMovies[]> {
-    return this.httpClient.get<ITrendingMovies[]>
-      (this.tvTrending_Url);
+  getTrendingMovies() {
+    return this.httpClient.get
+      (this.moviesTrending_Url);
 
 
   }
