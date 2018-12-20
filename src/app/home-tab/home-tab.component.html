@@ -3,11 +3,11 @@
     <div class="row">
       <mat-card class="mainCardAnimation col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <span class="titleStyle">
-          {{newsMovie}}
+          <h4>{{newsMovie}}</h4>
         </span>
-        <ul>
-          <li *ngFor="let trendMovie of trendingMovies.title"></li>
-          {{trendMovie}}
+        <ul *ngIf="trendingMovies">
+          <li *ngFor="let trendMovie of trendingMovies | keyvalue"></li>
+          {{trendMovie?.title}}
         </ul>
 
         <!-- <p>
@@ -15,11 +15,14 @@
 
         </p> -->
       </mat-card>
-
       <mat-card class="mainCardAnimation col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <span class="titleStyle">
-          {{newsTvshows}}
+          <h4> {{newsTvshows}} </h4>
         </span>
+        <ul>
+          <li *ngFor="let trendShows of trendingTvShows | keyvalue"></li>
+          {{trendShows?.title}}
+        </ul>
       </mat-card>
     </div>
   </section>
