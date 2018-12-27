@@ -5,25 +5,47 @@
         <span class="titleStyle">
           <h4>{{newsMovie}}</h4>
         </span>
-        <ul *ngIf="trendingMovies">
-          <li *ngFor="let trendMovie of trendingMovies | keyvalue"></li>
-          {{trendMovie?.title}}
-        </ul>
+        <div *ngFor="let trendMovie of trendingMovies | keyvalue">
+          <div class="list-group-item clearfix">
+            <img src="{{trendMovie.value.poster_path}}" class="pull-left" style="max-height: 50px">
+            <h5 class="list-group-item-heading pull-left">{{trendMovie.value.title}}</h5>
+            <!-- <p class="list-group-item-text">{{trendMovie.value.release_date}}</p> -->
+          </div>
+          <br>
+        </div>
 
-        <!-- <p>
-          {{trendingMovies}}
-
-        </p> -->
       </mat-card>
       <mat-card class="mainCardAnimation col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <span class="titleStyle">
           <h4> {{newsTvshows}} </h4>
         </span>
-        <ul>
-          <li *ngFor="let trendShows of trendingTvShows | keyvalue"></li>
-          {{trendShows?.title}}
-        </ul>
+        <div *ngFor="let trendTV of trendingTvShows | keyvalue">
+          <div class="list-group-item clearfix">
+            <img src="{{trendTV.value.poster_path}}" class="pull-left" style="max-height: 50px">
+            <h5 class="list-group-item-heading pull-left">{{trendTV.value.original_name}}</h5>
+            <!-- <p class="list-group-item-text">{{trendTV.value.release_date}}</p> -->
+          </div>
+          <br>
+        </div>
       </mat-card>
     </div>
   </section>
 </div>
+
+<!-- <div *ngFor="let recipe of recipes">
+  <a href="#" class="list-group-item clearfix">
+    <div class="pull-left">
+      <span class="pull-right">
+        <button type="button" class="close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </span>
+      <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+      <p class="list-group-item-text">{{recipe.desc}}</p>
+    </div>
+    <span class="pull-right">
+      <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" style="max-height: 50px">
+    </span>
+  </a>
+  <br>
+</div> -->

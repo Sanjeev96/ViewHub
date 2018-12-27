@@ -13,6 +13,7 @@ export class HomeTabComponent implements OnInit {
 
   public newsMovie = 'Top Movies';
   public newsTvshows = 'Top TV Shows';
+  public results: any[]
 
   public trendingMovies: any = [];
   public trendingTvShows: any = [];
@@ -27,21 +28,24 @@ export class HomeTabComponent implements OnInit {
 
   getTrendingMovies() {
     this.dataMedia.getTrendingMovies()
-      .subscribe(data => {
+      .subscribe(dataM => {
         for (let i = 0; i < 5; i++) {
-          this.trendingMovies = data.results[i];
-          console.log(this.trendingMovies.title, this.trendingMovies.release_date);
+          this.trendingMovies.push(dataM['results'][i]);
+
+
+          console.log('tv shows top 5 -- ', dataM['results'][i].title);
         }
       });
   }
 
   getTrendingTV() {
     this.dataMedia.getTrendingTvShows()
-      .subscribe(data => {
+      .subscribe(dataTV => {
         for (let i = 0; i < 5; i++) {
-          this.trendingTvShows = data.results[i];
-         // this.trendingTvShows.original_name;
-          console.log(this.trendingTvShows.original_name, this.trendingTvShows.first_air_date);
+          this.trendingTvShows.push(dataTV.results[i]);
+
+
+          console.log('Movies 5 -- ', dataTV['results'][i].original_name);
         }
       });
   }
