@@ -1,24 +1,18 @@
- <mat-toolbar color="primary">
+<mat-toolbar color="primary">
   <mat-toolbar-row>
     <span class="HeadPosition">
       <span class="heading">ViewHub</span>
       <mat-icon class="">tv</mat-icon>
     </span>
     <span class="spacer"></span>
-    <!-- <input  placeholder="Input"> -->
     <mat-icon class="searchIcon">search</mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<nav mat-tab-nav-bar>
-  <a mat-tab-link
-     *ngFor="let link of navLinks"
-     [routerLink]="link.path"
-     routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
-    {{link.label}}
-  </a>
-</nav>
-
-
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive"
+      [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
 <router-outlet></router-outlet>

@@ -13,11 +13,13 @@ export class HomeTabComponent implements OnInit {
 
   public newsMovie = 'Top Movies';
   public newsTvshows = 'Top TV Shows';
+  public baseImageURL = 'http://image.tmdb.org/t/p/w185/';
   public results: any[]
 
   public trendingMovies: any = [];
   public trendingTvShows: any = [];
 
+  public toggleOverview: boolean = false;
 
   constructor(private dataMedia: DataService) { }
 
@@ -33,7 +35,7 @@ export class HomeTabComponent implements OnInit {
           this.trendingMovies.push(dataM['results'][i]);
 
 
-          console.log('tv shows top 5 -- ', dataM['results'][i].title);
+          console.log('tv shows top 5 -- ',dataM['results'][i].genre_ids);
         }
       });
   }
@@ -49,4 +51,9 @@ export class HomeTabComponent implements OnInit {
         }
       });
   }
+
+  overviewBtn() {
+    this.toggleOverview = true;
+  }
+  
 }

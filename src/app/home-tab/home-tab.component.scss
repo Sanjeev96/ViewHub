@@ -1,11 +1,16 @@
-.pad{
-    padding-top: 30px;
-    padding-left: 30px;
-    padding-right: 30px;
-    // background-color: #efefef;
+.pad {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  // background-color: #efefef;
 }
 
-.titleStyle{
+.list-padding {
+  padding-left: 160px;
+  list-style: none;
 
+
+  .pointHeadings {
+    font-weight: bolder;
+  }
 }
-

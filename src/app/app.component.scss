@@ -1,17 +1,25 @@
 .heading {
-    padding: 5px;
+  padding: 5px;
 }
 
 .HeadPosition {
-    padding: 38px;
-    font-size: 32px;
+  padding: 38px;
+  font-size: 32px;
+  justify-content: center
 }
 
 .tvIcon {
-    padding: 0 14px;
-  }
-
-.spacer {
-    flex: 1 1 auto;
+  padding: 0 14px;
 }
 
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-tab-nav-bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    
+  }

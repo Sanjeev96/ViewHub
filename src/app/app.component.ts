@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'ViewHub';
 
   navLinks = [
-    {path: 'home', label: 'Home'},
     {path: 'tvShows', label: 'Tv-Shows'},
+    {path: 'home', label: 'Home'},
     {path: 'movies', label: 'Movies'}
   ];
 }

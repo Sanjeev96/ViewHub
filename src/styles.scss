@@ -21,13 +21,13 @@
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 0.7s;
+  animation-duration: 0.9s;
 }
 
 @keyframes fadeInOpacity {
   0% {
     opacity: 0;
-    transform: translatex(100%);
+    transform: translateY(100%);
     overflow-x: hidden;
   }
 
@@ -36,6 +36,58 @@
   }
 }
 
-.spacing{
-    width: 2px;
+.mainCardAnimationTV {
+  opacity: 1;
+  animation-name: fadeInOpacityTV;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.9s;
+}
+
+@keyframes fadeInOpacityTV {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+    overflow-x: hidden;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.mainCardAnimationMovie {
+  opacity: 1;
+  animation-name: fadeInOpacityMovie;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.9s;
+}
+
+@keyframes fadeInOpacityMovie {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    overflow-x: hidden;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.spacing {
+  width: 2px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.itemListContainer {
+  padding-left: 12px;
+}
+
+.infoIconAttr {
+  font-size: 25px;
 }
