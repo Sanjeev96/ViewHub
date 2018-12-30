@@ -1,11 +1,14 @@
-.heading {
-  padding: 5px;
-}
-
 .HeadPosition {
   padding: 38px;
   font-size: 32px;
-  justify-content: center
+}
+
+.mat-toolbar-row{
+  justify-content: center;
+}
+
+.heading {
+  padding: 5px;
 }
 
 .tvIcon {
@@ -17,9 +20,9 @@
 }
 
 .mat-tab-nav-bar {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
