@@ -54,13 +54,14 @@ export class HomeTabComponent implements OnInit {
       });
   }
 
-  showOverviewBtn(index) {
-    console.log('index = ', index)
+  showOverviewBtn(i) {
+    this.selectedIndex = i;
     this.toggleOverview = true;
+    console.log(this.selectedIndex);
   }
 
-  hideOverviewBtn(index: number) {
-    this.selectedIndex = index;
+  hideOverviewBtn(i) {
+    this.selectedIndex = i;
 
     this.toggleOverview = false;
   }
