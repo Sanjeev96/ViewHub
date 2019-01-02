@@ -5,17 +5,19 @@
         <span class="titleStyle">
           <h4>{{newsMovie}}</h4>
         </span>
-        <div *ngFor="let trendMovie of trendingMovies | keyvalue">
+        <div *ngFor="let trendMovie of trendingMovies | keyvalue; let i = index">
           <div class="list-group-item clearfix canvas">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendMovie.value.poster_path}}" style="max-height: 200px"
                 class="pull-left pointer">
-              <i (click)="overviewBtn()" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="!toggleOverview" (click)="showOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="toggleOverview" (click)="hideOverviewBtn(i)" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <ul class="list-padding">
                 <li><span class="pointHeadings "> Release Date:</span> {{trendMovie.value.release_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendMovie.value.original_language}}</li>
                 <li><span class="pointHeadings">Rating:</span> {{trendMovie.value.vote_average}}</li>
-                <li *ngIf="toggleOverview"><span class="pointHeadings">Description:</span> {{trendMovie.value.overview}}</li>
+                <li *ngIf="toggleOverview"><span class="pointHeadings">Description:</span>
+                  {{trendMovie.value.overview}}</li>
               </ul>
             </span>
 
@@ -29,11 +31,12 @@
         <span class="titleStyle">
           <h4> {{newsTvshows}} </h4>
         </span>
-        <div *ngFor="let trendTV of trendingTvShows | keyvalue">
+        <div *ngFor="let trendTV of trendingTvShows | keyvalue; let i = index;">
           <div class="list-group-item clearfix canvas">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendTV.value.poster_path}}" style="max-height: 200px" class="pull-left pointer">
-              <i (click)="overviewBtn()" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="!toggleOverview" (click)="showOverviewBtn()" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="toggleOverview" (click)="hideOverviewBtn()" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <ul class="list-padding">
                 <li><span class="pointHeadings"> first Air Date:</span> {{trendTV.value.first_air_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendTV.value.original_language}}</li>

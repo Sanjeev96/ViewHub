@@ -20,6 +20,8 @@ export class HomeTabComponent implements OnInit {
   public trendingTvShows: any = [];
 
   public toggleOverview: boolean = false;
+  public selectedIndex: number;
+
 
   constructor(private dataMedia: DataService) { }
 
@@ -35,7 +37,7 @@ export class HomeTabComponent implements OnInit {
           this.trendingMovies.push(dataM['results'][i]);
 
 
-          console.log('tv shows top 5 -- ',dataM['results'][i].genre_ids);
+          // console.log('tv shows top 5 -- ', dataM['results'][i].genre_ids);
         }
       });
   }
@@ -47,13 +49,19 @@ export class HomeTabComponent implements OnInit {
           this.trendingTvShows.push(dataTV.results[i]);
 
 
-          console.log('Movies 5 -- ', dataTV['results'][i].original_name);
+          // console.log('Movies 5 -- ', dataTV['results'][i].original_name);
         }
       });
   }
 
-  overviewBtn() {
+  showOverviewBtn(index) {
+    console.log('index = ', index)
     this.toggleOverview = true;
   }
-  
+
+  hideOverviewBtn(index: number) {
+    this.selectedIndex = index;
+
+    this.toggleOverview = false;
+  }
 }
