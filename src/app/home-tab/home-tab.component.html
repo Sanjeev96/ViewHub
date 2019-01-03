@@ -10,13 +10,13 @@
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendMovie.value.poster_path}}" style="max-height: 200px"
                 class="pull-left pointer">
-              <i *ngIf="!toggleOverview" (click)="showOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
-              <i *ngIf="toggleOverview" (click)="hideOverviewBtn(i)" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="!toggleMovieOverview" (click)="showMovieOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="toggleMovieOverview" (click)="hideMovieOverviewBtn ()" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <ul class="list-padding">
                 <li><span class="pointHeadings "> Release Date:</span> {{trendMovie.value.release_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendMovie.value.original_language}}</li>
                 <li><span class="pointHeadings">Rating:</span> {{trendMovie.value.vote_average}}</li>
-                <li *ngIf="selectedIndex == i"><span class="pointHeadings">Description:</span>
+                <li *ngIf="selectedMovieIndex == i"><span class="pointHeadings">Description:</span>
                   {{trendMovie.value.overview}}</li>
               </ul>
             </span>
@@ -33,13 +33,13 @@
           <div class="shadow list-group-item clearfix canvas">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendTV.value.poster_path}}" style="max-height: 200px" class="pull-left pointer">
-              <i *ngIf="!toggleOverview" (click)="showOverviewBtn()" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
-              <i *ngIf="toggleOverview" (click)="hideOverviewBtn()" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="!toggleTVOverview" (click)="showTVOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="toggleTVOverview" (click)="hideTVOverviewBtn()" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <ul class="list-padding">
                 <li><span class="pointHeadings"> first Air Date:</span> {{trendTV.value.first_air_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendTV.value.original_language}}</li>
                 <li><span class="pointHeadings">Description:</span> {{trendTV.value.vote_average}}</li>
-                <li *ngIf="toggleOverview"><span class="pointHeadings">Description:</span> {{trendTV.value.overview}}</li>
+                <li *ngIf="selectedTVIndex == i"><span class="pointHeadings">Description:</span> {{trendTV.value.overview}}</li>
               </ul>
             </span>
           </div>

@@ -19,8 +19,11 @@ export class HomeTabComponent implements OnInit {
   public trendingMovies: any = [];
   public trendingTvShows: any = [];
 
-  public toggleOverview: boolean = false;
-  public selectedIndex: number;
+  public toggleTVOverview: boolean = false;
+  public selectedMovieIndex: number;
+
+  public toggleMovieOverview: boolean = false;
+  public selectedTVIndex: number;
 
 
   constructor(private dataMedia: DataService) { }
@@ -54,16 +57,28 @@ export class HomeTabComponent implements OnInit {
       });
   }
 
-  showOverviewBtn(i) {
-    if (this.selectedIndex !== i) {
-      this.selectedIndex = i;
-      this.toggleOverview = true;
+  showMovieOverviewBtn(i) {
+    if (this.selectedMovieIndex !== i) {
+      this.selectedMovieIndex = i;
+      this.toggleMovieOverview = true;
 
-    } 
+    }
   }
-  hideOverviewBtn() {
-    this.toggleOverview = false;
-    this.selectedIndex = null;
+  hideMovieOverviewBtn() {
+    this.toggleMovieOverview = false;
+    this.selectedMovieIndex = null;
+  }
+
+  showTVOverviewBtn(i) {
+    if (this.selectedTVIndex !== i) {
+      this.selectedTVIndex = i;
+      this.toggleTVOverview = true;
+
+    }
+  }
+  hideTVOverviewBtn() {
+    this.toggleTVOverview = false;
+    this.selectedTVIndex = null;
   }
 }
 
