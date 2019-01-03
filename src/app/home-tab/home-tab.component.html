@@ -16,7 +16,7 @@
                 <li><span class="pointHeadings "> Release Date:</span> {{trendMovie.value.release_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendMovie.value.original_language}}</li>
                 <li><span class="pointHeadings">Rating:</span> {{trendMovie.value.vote_average}}</li>
-                <li *ngIf="toggleOverview"><span class="pointHeadings">Description:</span>
+                <li *ngIf="selectedIndex == i"><span class="pointHeadings">Description:</span>
                   {{trendMovie.value.overview}}</li>
               </ul>
             </span>
