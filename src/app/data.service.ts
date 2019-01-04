@@ -16,21 +16,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  // Receive Observable and cast into trending
-  // getTrendingMovies(): Observable<TrendingMovies[]> {
-  //    return this.http.get<TrendingMovies[]>(this.moviesTrending_Url);
 
   getTrendingMovies() {
-    return this.http.get(this.moviesTrending_Url);
-
-
-    // const url = `${this.moviesTrending_Url}/`;
-    // return this.http.get(url).pipe(
-    //     map((data: any[]) => data.map((movie: TrendingMovies) => new TrendingMovies(
-
-    //     ))),
-    //   );
-
+    return this.http.get(this.moviesTrending_Url); 
 
   }
 
@@ -38,5 +26,3 @@ export class DataService {
     return this.http.get(this.tvTrending_Url);
   }
 }
-
-// going to be working on how to only call api here and use api data inside relevant component

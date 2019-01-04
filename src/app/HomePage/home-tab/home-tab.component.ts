@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
-import { TrendingMovies } from '../trending-movies';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-home-tab',

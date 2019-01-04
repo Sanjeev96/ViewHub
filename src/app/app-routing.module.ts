@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeTabComponent } from './home-tab/home-tab.component';
-import { TvShowTabComponent } from './tv-show-tab/tv-show-tab.component';
-import { MoviesTabComponent } from './movies-tab/movies-tab.component';
+import { HomeTabComponent } from './HomePage/home-tab/home-tab.component';
+
+import { TvShowTabComponent } from './TVShows/tv-show-tab/tv-show-tab.component';
+import { MoviesTabComponent } from './Movies/movies-tab/movies-tab.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
