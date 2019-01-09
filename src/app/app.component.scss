@@ -3,16 +3,21 @@
   font-size: 32px;
 }
 
-.mat-toolbar-row{
+.mat-toolbar{
+  background-color: #444547;
+}
+
+.mat-toolbar-row {
   justify-content: center;
 }
 
 .heading {
   padding: 5px;
+  color: white;
 }
 
 .tvIcon {
-  padding: 0 14px;
+  color: white;
 }
 
 .spacer {
@@ -27,7 +32,12 @@
 
 }
 
-.searchPos{
+.searchPos {
   position: absolute;
   right: 2px;
+}
+
+
+.searhField {
+  height: 45px;
 }

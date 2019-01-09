@@ -1,13 +1,13 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
   <mat-toolbar-row>
     <span class="HeadPosition">
       <span class="heading">ViewHub</span>
-      <mat-icon class="">tv</mat-icon>
+      <mat-icon class="tvIcon">tv</mat-icon>
     </span>
-    <div class="input-group col-md-2 searchPos">
-      <input type="text" class="form-control" placeholder="Search">
+    <div class="input-group col-md-3 searchPos">
+      <input type="text" class="form-control searhField" placeholder="Search" #SearchInput>
       <div class="input-group-append">
-        <button type="button" class="">
+        <button type="button" class="btn btn-info" (click)="searchBtn()">
           <mat-icon>search</mat-icon>
         </button>
       </div>
