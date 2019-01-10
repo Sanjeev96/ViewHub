@@ -13,21 +13,11 @@ export class AppComponent {
     { path: 'movies', label: 'Movies' }
   ];
 
-  @ViewChild('SearchInput') SearchInput: ElementRef
-
   constructor() {
   }
 
   ngOnInit() {
 
   }
-  searchBtn() {
-    let search = this.SearchInput.nativeElement.value;
 
-    if (search == null || search == '') {
-      alert('Please Enter Search');
-    } else {
-      console.log(search)
-    }
-  }
 }

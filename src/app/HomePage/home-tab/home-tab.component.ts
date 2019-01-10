@@ -48,7 +48,7 @@ export class HomeTabComponent implements OnInit {
     this.dataMedia.getTrendingTvShows()
       .subscribe(dataTV => {
         for (let i = 0; i < 5; i++) {
-          this.trendingTvShows.push(dataTV.results[i]);
+          this.trendingTvShows.push(dataTV['results'][i]);
 
 
           // console.log('Movies 5 -- ', dataTV['results'][i].original_name);

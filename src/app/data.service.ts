@@ -18,11 +18,11 @@ export class DataService {
 
 
   getTrendingMovies() {
-    return this.http.get(this.moviesTrending_Url); 
+    return this.http.get(this.moviesTrending_Url);
 
   }
 
-  getTrendingTvShows(): Observable<any> {
+  getTrendingTvShows() {
     return this.http.get(this.tvTrending_Url);
   }
 }

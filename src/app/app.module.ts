@@ -8,6 +8,7 @@ import { MaterialModule } from './material';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePageComponent } from './Movies/movie-page/movie-page.component';
 import { TVShowPageComponent } from './TVShows/tvshow-page/tvshow-page.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -16,7 +17,8 @@ import { TVShowPageComponent } from './TVShows/tvshow-page/tvshow-page.component
     AppComponent,
     routingComponents,
     MoviePageComponent,
-    TVShowPageComponent
+    TVShowPageComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
