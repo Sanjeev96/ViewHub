@@ -13,11 +13,12 @@
               <i *ngIf="!toggleMovieOverview" (click)="showMovieOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <i *ngIf="toggleMovieOverview" (click)="hideMovieOverviewBtn ()" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <ul class="list-padding">
-                <li><span class="pointHeadings "> Release Date:</span> {{trendMovie.value.release_date}}</li>
+                <li><span class="pointHeadings"> Release Date:</span> {{trendMovie.value.release_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendMovie.value.original_language}}</li>
                 <li><span class="pointHeadings">Rating:</span> {{trendMovie.value.vote_average}}</li>
                 <li><span class="pointHeadings">Description:</span>
-                  <span *ngIf="selectedMovieIndex == i"> {{trendMovie.value.overview}}</span></li>
+                  <span [ngClass]="{DescAttr: toggleMovieOverview }" *ngIf="selectedMovieIndex == i">
+                    {{trendMovie.value.overview}}</span></li>
               </ul>
             </span>
           </div>
@@ -40,7 +41,7 @@
                 <li><span class="pointHeadings">Language:</span> {{trendTV.value.original_language}}</li>
                 <li><span class="pointHeadings">Rating:</span> {{trendTV.value.vote_average}}</li>
                 <li><span class="pointHeadings">Description:</span>
-                  <span *ngIf="selectedTVIndex == i">{{trendTV.value.overview}}</span></li>
+                  <span [ngClass]="{DescAttr: toggleMovieOverview }" *ngIf="selectedTVIndex == i">{{trendTV.value.overview}}</span></li>
               </ul>
             </span>
           </div>

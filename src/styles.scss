@@ -95,3 +95,26 @@
 .shadow {
   box-shadow: 5px;
 }
+
+.pad {
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  // background-color: #efefef;
+}
+
+.list-padding {
+  padding-left: 160px;
+  list-style: none;
+
+
+  .pointHeadings {
+    font-weight: bolder;
+  }
+
+  .DescAttr {
+    color: #117a8b;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+}

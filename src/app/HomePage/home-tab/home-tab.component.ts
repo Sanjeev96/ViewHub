@@ -33,9 +33,9 @@ export class HomeTabComponent implements OnInit {
   }
 
   getTrendingMovies() {
-    this.dataMedia.getTrendingMovies()
+    this.dataMedia.getTrendingMoviesURL()
       .subscribe(dataM => {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
           this.trendingMovies.push(dataM['results'][i]);
 
 
@@ -45,9 +45,9 @@ export class HomeTabComponent implements OnInit {
   }
 
   getTrendingTV() {
-    this.dataMedia.getTrendingTvShows()
+    this.dataMedia.getTrendingTvShowsURL()
       .subscribe(dataTV => {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
           this.trendingTvShows.push(dataTV['results'][i]);
 
 

@@ -14,7 +14,7 @@ export class SearchComponent implements OnInit {
   public search_Urlpt1 = 'https://api.themoviedb.org/3/search/multi?api_key=10472e5b920186c224c45d801066d9aa&language=en-US&query='
   public search_Urlpt2 = '&page=1&include_adult=false';
   public searchRequestURL: any;
-  public searchRequsestData: any = []; 
+  public searchRequsestData: any = [];
   constructor(public dataMedia: DataService, private http: HttpClient) { }
 
   ngOnInit() {
@@ -25,14 +25,15 @@ export class SearchComponent implements OnInit {
 
     if (search == null || search == '') {
       alert('Please Enter Search');
-    } else {
+    } 
+    else {
       this.searchRequestURL = this.search_Urlpt1 + search + this.search_Urlpt2
       return this.http.get(this.searchRequestURL)
-      .subscribe(searchData => {
-        this.searchRequsestData.push(searchData['results']);
-        console.log(this.searchRequsestData)
-      });
-      
+        .subscribe(searchData => {
+          this.searchRequsestData.push(searchData['results']);
+          console.log(this.searchRequsestData)
+        });
+
     }
   }
 }
