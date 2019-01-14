@@ -103,6 +103,11 @@
   // background-color: #efefef;
 }
 
+.list-group-item {
+  overflow: auto;
+  overflow: hidden;
+}
+
 .list-padding {
   padding-left: 160px;
   list-style: none;
@@ -117,4 +122,30 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
   }
+
+}
+
+.list-padding-Mtab {
+  padding-left: 200px;
+  list-style: none;
+}
+
+.dividerLinePos {
+  padding: 220px;
+}
+
+.DescPos {
+  // position: absolute;
+  float: top;
+  top: 24px;
+  right: 2px;
+  background-color: #444547;
+  color: white
+}
+
+.WatchList {
+  position: fixed;
+  top: 205px;
+  right: 57px;
+  ;
 }
