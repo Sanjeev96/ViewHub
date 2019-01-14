@@ -9,30 +9,32 @@
         <div class="col-md-12">
           <div class="row">
             <div class="col-sm-9 col-md-9" *ngFor="let popTvShow of popularTvShows | keyvalue">
-              <div class="list-group-item shadow canvas contentAttr">
+              <div class="list-group-item shadow canvas contentAttr" style="background-image: http://image.tmdb.org/t/p/w185/A30ZqEoDbchvE7mCZcSp6TEwB1Q.jpg">
                 <span>
                   <div>
                     <img src="http://image.tmdb.org/t/p/w185/{{popTvShow.value.poster_path}}" style="height: 380px"
                       class="pull-left pointer">
                     <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popTvShow.value.overview}}</mat-card>
-                    <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
+                    <div class="col-sm-6 col-md-6">
                       <mat-list class="list-padding-Mtab">
                         <mat-list-item class="pointHeadings"></mat-list-item>
-                        <mat-list-item class="pointHeadings">Release date:</mat-list-item>
-                        <mat-list-item class="pointHeadings">Genre: </mat-list-item>
-                        <mat-list-item class="pointHeadings">Rating:</mat-list-item>
+                        <mat-list-item class="pointHeadings">1st air date: {{popTvShow.value.first_air_date}}</mat-list-item>
+                        <mat-list-item class="pointHeadings">Genre: {{popTvShow.value.genre_ids}}</mat-list-item>
+                        <mat-list-item class="pointHeadings">Rating: {{popTvShow.value.vote_average}}</mat-list-item>
                         <mat-list-item class="pointHeadings"></mat-list-item>
                         <mat-list-item class="pointHeadings">
                           <mat-slide-toggle style="">Add to watch</mat-slide-toggle>
                         </mat-list-item>
                       </mat-list>
                     </div>
-
                   </div>
                 </span>
               </div>
               <br>
             </div>
+            <div class="col-sm-1 col-md-1"></div>
+            <mat-card class="col-sm-2 col-md-2 WatchList">Watch List</mat-card>
+
           </div>
         </div>
       </mat-card>
