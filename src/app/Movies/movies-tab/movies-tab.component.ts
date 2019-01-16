@@ -11,10 +11,7 @@ export class MoviesTabComponent implements OnInit {
   public title = 'Movies';
   public popularMovies: any = []
   @ViewChildren('titleText') titleText: QueryList<ElementRef>
-  // @ViewChild('titleText') titleText: ElementRef;
-  public titleElement: any
-  public selectedIndex: number
-
+  public movieTitle: any;
 
   constructor(private dataMedia: DataService) { }
 
@@ -34,12 +31,11 @@ export class MoviesTabComponent implements OnInit {
 
   toggleWatch(index: number) {
 
-    this.selectedIndex = index;
-    if (this.selectedIndex === index) {
-      console.log('insdie if', this.selectedIndex);
-      console.log(this.titleText._results[index]._element.nativeElement.innerText);
+    this.movieTitle = this.titleText._results[index]._element.nativeElement.innerText
+    console.log(this.movieTitle);
 
-    }
+
+
   }
-
 }
+
