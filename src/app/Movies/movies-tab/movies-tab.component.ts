@@ -10,8 +10,8 @@ export class MoviesTabComponent implements OnInit {
 
   public title = 'Movies';
   public popularMovies: any = []
-  // @ViewChildren('titleText') titleText: QueryList<ElementRef>
-  @ViewChild('titleText') titleText: ElementRef;
+  @ViewChildren('titleText') titleText: QueryList<ElementRef>
+  // @ViewChild('titleText') titleText: ElementRef;
   public titleElement: any
   public selectedIndex: number
 
@@ -36,17 +36,10 @@ export class MoviesTabComponent implements OnInit {
 
     this.selectedIndex = index;
     if (this.selectedIndex === index) {
+      console.log('insdie if', this.selectedIndex);
+      console.log(this.titleText._results[index]._element.nativeElement.innerText);
 
-      // this.titleText.forEach(dataMovieTitle => console.log(dataMovieTitle._element.nativeElement.innerText))
-
-      // console.log('insdie if', this.selectedIndex);
-      console.log(this.titleText._element.nativeElement.innerText);
-      
     }
   }
-
-  //     console.log('index', this.selectedIndex);
-  //     console.log("toggle on",this.titleText);
-  // }
 
 }
