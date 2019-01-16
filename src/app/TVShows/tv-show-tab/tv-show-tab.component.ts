@@ -22,7 +22,7 @@ export class TvShowTabComponent implements OnInit {
     .subscribe(dataPopTV=> {
       for (let i = 0; i < 20; i++) {
         this.popularTvShows.push(dataPopTV['results'][i]);
-        console.log('popular tv Shows = ', dataPopTV['results'][i].original_name);
+        // console.log('popular tv Shows = ', dataPopTV['results'][i].original_name);
         }
       });
 

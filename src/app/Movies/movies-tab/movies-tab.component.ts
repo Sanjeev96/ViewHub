@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, ViewChildren, QueryList } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -10,6 +10,10 @@ export class MoviesTabComponent implements OnInit {
 
   public title = 'Movies';
   public popularMovies: any = []
+  // @ViewChildren('titleText') titleText: QueryList<ElementRef>
+  @ViewChild('titleText') titleText: ElementRef;
+  public titleElement: any
+  public selectedIndex: number
 
 
   constructor(private dataMedia: DataService) { }
@@ -20,15 +24,29 @@ export class MoviesTabComponent implements OnInit {
 
   getPopularMovies() {
     this.dataMedia.getPopularMoviesURL()
-    .subscribe(datapopMovie=> {
-      for (let i = 0; i < 20; i++) {
-        this.popularMovies.push(datapopMovie['results'][i]);
-        // console.log('movies = ', datapopMovie['results'][i].title);
+      .subscribe(datapopMovie => {
+        for (let i = 0; i < 20; i++) {
+          this.popularMovies.push(datapopMovie['results'][i]);
+          // console.log('movies = ', datapopMovie['results'][i].title);
         }
       });
-
-
-
   }
+
+  toggleWatch(index: number) {
+
+    this.selectedIndex = index;
+    if (this.selectedIndex === index) {
+
+      // this.titleText.forEach(dataMovieTitle => console.log(dataMovieTitle._element.nativeElement.innerText))
+
+      // console.log('insdie if', this.selectedIndex);
+      console.log(this.titleText._element.nativeElement.innerText);
+      
+    }
+  }
+
+  //     console.log('index', this.selectedIndex);
+  //     console.log("toggle on",this.titleText);
+  // }
 
 }

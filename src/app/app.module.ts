@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MoviePageComponent } from './Movies/movie-page/movie-page.component';
 import { TVShowPageComponent } from './TVShows/tvshow-page/tvshow-page.component';
 import { SearchComponent } from './search/search.component';
+import { WatchListComponent } from './watch-list/watch-list.component';
 
 
 
@@ -18,7 +19,8 @@ import { SearchComponent } from './search/search.component';
     routingComponents,
     MoviePageComponent,
     TVShowPageComponent,
-    SearchComponent
+    SearchComponent,
+    WatchListComponent
   ],
   imports: [
     BrowserModule,

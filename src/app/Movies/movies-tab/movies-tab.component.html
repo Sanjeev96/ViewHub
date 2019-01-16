@@ -8,33 +8,35 @@
         <br><br>
         <div class="container col-md-12">
           <div class="row">
-            <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of popularMovies | keyvalue;">
+            <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of popularMovies | keyvalue; let i = index">
               <div class="list-group-item shadow canvas contentAttr">
                 <span>
                   <div>
                     <img src="http://image.tmdb.org/t/p/w185/{{popMovie.value.poster_path}}" style="height: 380px"
                       class="pull-left pointer">
-                      <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview}}</mat-card>
+                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview}}</mat-card>
                     <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
                       <mat-list class="list-padding-Mtab">
-                        <mat-list-item class="pointHeadings">{{popMovie.value.original_title}}</mat-list-item>
+                        <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Release date: {{popMovie.value.release_date}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Genre: {{popMovie.value.genre_ids}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Rating: {{popMovie.value.vote_average}}</mat-list-item>
                         <mat-list-item class="pointHeadings"></mat-list-item>
                         <mat-list-item class="pointHeadings">
-                            <mat-slide-toggle style="">Add to watch</mat-slide-toggle>
+                          <mat-slide-toggle (click)="toggleWatch(i)">Add to watch</mat-slide-toggle>
+                          <p></p>
                         </mat-list-item>
                       </mat-list>
                     </div>
-                    
+
                   </div>
                 </span>
               </div>
               <br>
             </div>
             <div class="col-sm-1 col-md-1"></div>
-            <mat-card class="col-sm-2 col-md-2 WatchList">Watch List</mat-card>
+            <app-watch-list></app-watch-list>
+            <!-- <p >test text</p> -->
           </div>
         </div>
       </mat-card>
