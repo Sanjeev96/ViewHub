@@ -2,9 +2,23 @@
   <section class="container col-md-12">
     <div class="row">
       <mat-card class="mainCardAnimationMovie col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <span class="titleStyle">
-          <h4>{{newsMovie}}</h4>
-        </span>
+        <div class="container col-sm-12 col-md-12">
+          <div class="row">
+            <div class="col-4">
+              <span class="titleStyle">
+                <h4>{{newsMovie}}</h4>
+              </span>
+            </div>
+            <div class="col-8">
+              <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>Day</button>
+                <button mat-menu-item>Week</button>
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+        <br>
         <div *ngFor="let trendMovie of trendingMovies | keyvalue; let i = index">
           <div class="shadow list-group-item clearfix canvas">
             <span>
@@ -27,9 +41,23 @@
 
       </mat-card>
       <mat-card class="mainCardAnimationTV col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <span class="titleStyle">
-          <h4> {{newsTvshows}} </h4>
-        </span>
+          <div class="container col-sm-12 col-md-12">
+              <div class="row">
+                <div class="col-4">
+                  <span class="titleStyle">
+                    <h4>{{newsTvshows}}</h4>
+                  </span>
+                </div>
+                <div class="col-8">
+                  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>Day</button>
+                    <button mat-menu-item>Week</button>
+                  </mat-menu>
+                </div>
+              </div>
+            </div>
+        <br>
         <div *ngFor="let trendTV of trendingTvShows | keyvalue; let i = index;">
           <div class="shadow list-group-item clearfix canvas">
             <span>

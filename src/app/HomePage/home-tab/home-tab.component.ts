@@ -10,8 +10,8 @@ import { DataService } from 'src/app/data.service';
 export class HomeTabComponent implements OnInit {
 
 
-  public newsMovie = 'Top Movies';
-  public newsTvshows = 'Top TV Shows';
+  public newsMovie = 'Trending Movies';
+  public newsTvshows = 'Trending Shows';
   public baseImageURL = 'http://image.tmdb.org/t/p/w185/';
   public results: any[]
 

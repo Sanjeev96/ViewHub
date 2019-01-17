@@ -10,7 +10,7 @@ export class MoviesTabComponent implements OnInit {
 
   public title = 'Movies';
   public popularMovies: any = []
-  @ViewChildren('titleText') titleText: QueryList<ElementRef>
+  @ViewChildren('titleText') titleText: QueryList<ElementRef>;
   public movieTitle: any;
 
   constructor(private dataMedia: DataService) { }
@@ -31,8 +31,8 @@ export class MoviesTabComponent implements OnInit {
 
   toggleWatch(index: number) {
 
-    this.movieTitle = this.titleText._results[index]._element.nativeElement.innerText
-    console.log(this.movieTitle);
+    this.movieTitle = this.titleText['_results'][index]['_element']['nativeElement']['innerText'];
+  //  console.log(this.movieTitle); 
 
 
 

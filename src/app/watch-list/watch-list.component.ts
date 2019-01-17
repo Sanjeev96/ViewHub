@@ -7,18 +7,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class WatchListComponent implements OnInit {
 
-  @Input() public movieTitle_I:any;
+  @Input() public movieTitle_I: any;
 
   constructor() { }
 
   ngOnInit() {
-    // setInterval(() => {
-    //   this.ontoggleMovie(event)
-    // }, 5000);
-  }
-
-  ontoggleMovie(titleText) {
 
   }
-  
+
+  ngOnChanges() {
+    console.log(this.movieTitle_I);
+
+  }
+
 }

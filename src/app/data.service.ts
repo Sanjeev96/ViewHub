@@ -10,23 +10,27 @@ import { map } from 'rxjs/operators';
 })
 export class DataService {
 
-  public moviesTrending_Url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=10472e5b920186c224c45d801066d9aa';
-  public tvTrending_Url = 'https://api.themoviedb.org/3/trending/tv/week?api_key=10472e5b920186c224c45d801066d9aa';
+  public moviesTrending_ByDay_Url = 'https://api.themoviedb.org/3/trending/movie/day?api_key=10472e5b920186c224c45d801066d9aa';
+  public tvTrending_ByDay_Url = 'https://api.themoviedb.org/3/trending/tv/day?api_key=10472e5b920186c224c45d801066d9aa';
+  public moviesTrending_ByWeek_Url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=10472e5b920186c224c45d801066d9aa';
+  public tvTrending_ByWeek_Url = 'https://api.themoviedb.org/3/trending/tv/week?api_key=10472e5b920186c224c45d801066d9aa';
+
+
   public popularMovies_Url = 'https://api.themoviedb.org/3/movie/popular?api_key=10472e5b920186c224c45d801066d9aa&language=en-US&page=1';
   public popularTvShows_Url = 'https://api.themoviedb.org/3/tv/popular?api_key=10472e5b920186c224c45d801066d9aa&language=en-US&page=1';
-  
+
 
 
   constructor(private http: HttpClient) { }
 
 
   getTrendingMoviesURL() {
-    return this.http.get(this.moviesTrending_Url);
+    return this.http.get(this.moviesTrending_ByDay_Url);
 
   }
 
   getTrendingTvShowsURL() {
-    return this.http.get(this.tvTrending_Url);
+    return this.http.get(this.tvTrending_ByDay_Url);
   }
 
   getPopularMoviesURL() {
