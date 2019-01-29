@@ -2,15 +2,17 @@
   <section class="container col-md-12">
     <div class="row">
       <mat-card class="mainCardAnimationMovie col-xs-12 col-sm-12 col-md-12">
-        <span class="titleStyle">
-          <mat-radio-group>
-            <mat-radio-button value="1">Now Playing</mat-radio-button>&nbsp;
-            <mat-radio-button value="2">Popular</mat-radio-button>&nbsp;
-            <mat-radio-button value="2">Top Rated</mat-radio-button>&nbsp;
-            <mat-radio-button value="2">upcoming </mat-radio-button>&nbsp;
-          </mat-radio-group>
-        </span>
-        <br><br>
+        <div class="container col-md-12">
+          <span class="titleStyle">
+            <mat-button-toggle-group>
+              <mat-button-toggle>Now Playing</mat-button-toggle>&nbsp;
+              <mat-button-toggle (click)="togglePopular()">Popular</mat-button-toggle>&nbsp;
+              <mat-button-toggle>Top Rated</mat-button-toggle>&nbsp;
+              <mat-button-toggle>upcoming </mat-button-toggle>&nbsp;
+            </mat-button-toggle-group>
+          </span>
+        </div>
+        <br>
         <div class="container col-md-12">
           <div class="row">
             <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of popularMovies | keyvalue; let i = index">
