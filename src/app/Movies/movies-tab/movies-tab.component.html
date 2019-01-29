@@ -5,17 +5,17 @@
         <div class="container col-md-12">
           <span class="titleStyle">
             <mat-button-toggle-group>
-              <mat-button-toggle>Now Playing</mat-button-toggle>&nbsp;
               <mat-button-toggle (click)="togglePopular()">Popular</mat-button-toggle>&nbsp;
-              <mat-button-toggle>Top Rated</mat-button-toggle>&nbsp;
-              <mat-button-toggle>upcoming </mat-button-toggle>&nbsp;
+              <mat-button-toggle (click)="togglePlaying()">Now Playing</mat-button-toggle>&nbsp;
+              <mat-button-toggle (click)="toggleTopRated()">Top Rated</mat-button-toggle>&nbsp;
+              <mat-button-toggle (click)="toggleUpcoming()">upcoming </mat-button-toggle>&nbsp;
             </mat-button-toggle-group>
           </span>
         </div>
         <br>
         <div class="container col-md-12">
           <div class="row">
-            <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of popularMovies | keyvalue; let i = index">
+            <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of Movies | keyvalue; let i = index">
               <div class="list-group-item shadow canvas contentAttr">
                 <span>
                   <div>

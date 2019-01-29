@@ -9,7 +9,7 @@ import { DataService } from 'src/app/data.service';
 export class MoviesTabComponent implements OnInit {
 
   public title = 'Movies';
-  public popularMovies: any = []
+  public Movies: any = []
   @ViewChildren('titleText') titleText: QueryList<ElementRef>;
   public movieTitle: any;
 
@@ -18,14 +18,14 @@ export class MoviesTabComponent implements OnInit {
   ngOnInit() {
     // this.getPopularMovies();
     this.togglePopular();
-    
+
   }
 
   // getPopularMovies() {
   //   this.dataMedia.getPopularMoviesURL()
   //     .subscribe(datapopMovie => {
   //       for (let i = 0; i < 20; i++) {
-  //         this.popularMovies.push(datapopMovie['results'][i]);
+  //         this.Movies.push(datapopMovie['results'][i]);
   //         // console.log('movies = ', datapopMovie['results'][i].title);
   //       }
   //     });
@@ -35,10 +35,25 @@ export class MoviesTabComponent implements OnInit {
     this.dataMedia.getPopularMoviesURL()
       .subscribe(datapopMovie => {
         for (let i = 0; i < 20; i++) {
-          this.popularMovies.push(datapopMovie['results'][i]);
-          // console.log('movies = ', datapopMovie['results'][i].title);
+          this.Movies.push(datapopMovie['results'][i]);
         }
       });
+  }
+
+  togglePlaying() {
+    // this.dataMedia.getNowPlayingMovies()
+    //   .subscribe(dataPlayingMovie => {
+    //     for (let i = 0; i < 20; i++){
+    //       this.
+    //     }
+    //   });
+  }
+
+  toggleTopRated() {
+
+  }
+
+  toggleUpcoming() {
 
   }
 
