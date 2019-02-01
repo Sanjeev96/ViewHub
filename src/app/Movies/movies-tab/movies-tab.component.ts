@@ -16,7 +16,7 @@ export class MoviesTabComponent implements OnInit {
   constructor(private dataMedia: DataService) { }
 
   ngOnInit() {
-    // this.togglePopular();
+    this.togglePopular();
 
   }
 
@@ -33,6 +33,7 @@ export class MoviesTabComponent implements OnInit {
     this.dataMedia.getPopularMoviesURL()
       .subscribe(datapopMovie => {
         for (let i = 0; i < 20; i++) {
+          this.Movies.splice(i);
           this.Movies.push(datapopMovie['results'][i]);
           // console.log('movies = ', datapopMovie['results'][i].title);
 
@@ -53,6 +54,7 @@ export class MoviesTabComponent implements OnInit {
     this.dataMedia.getTopRatedMoviesURL()
       .subscribe(dataTopMovie => {
         for (let i = 0; i < 20; i++) {
+          this.Movies.splice(i);
           this.Movies.push(dataTopMovie['results'][i]);
           // console.log('movies = ', dataTopMovie['results'][i].title);
         }
