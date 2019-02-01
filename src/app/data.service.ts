@@ -19,6 +19,7 @@ export class DataService {
   //Movies Tab
   public popularMovies_Url = 'https://api.themoviedb.org/3/movie/popular?api_key=10472e5b920186c224c45d801066d9aa&language=en-US&page=1';
   public nowPlayingMovies_Url = "https://api.themoviedb.org/3/movie/now_playing?api_key=10472e5b920186c224c45d801066d9aa&language=en-US&page=1&region=GB";
+  public topRatedMovies_Url  = "https://api.themoviedb.org/3/movie/top_rated?api_key=10472e5b920186c224c45d801066d9aa&language=en-US&page=1&region=GB";
 
 
 
@@ -42,8 +43,12 @@ export class DataService {
     return this.http.get(this.popularMovies_Url);
   }
 
-  getNowPlayingMovies() {
+  getNowPlayingMoviesURL() {
     return this.http.get(this.nowPlayingMovies_Url);
+  }
+
+  getTopRatedMoviesURL() {
+    return this.http.get(this.topRatedMovies_Url)
   }
 
   getPopularTvShowsURL() {

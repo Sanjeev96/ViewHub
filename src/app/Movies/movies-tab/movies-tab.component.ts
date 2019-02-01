@@ -16,8 +16,7 @@ export class MoviesTabComponent implements OnInit {
   constructor(private dataMedia: DataService) { }
 
   ngOnInit() {
-    // this.getPopularMovies();
-    this.togglePopular();
+    // this.togglePopular();
 
   }
 
@@ -26,7 +25,6 @@ export class MoviesTabComponent implements OnInit {
   //     .subscribe(datapopMovie => {
   //       for (let i = 0; i < 20; i++) {
   //         this.Movies.push(datapopMovie['results'][i]);
-  //         // console.log('movies = ', datapopMovie['results'][i].title);
   //       }
   //     });
   // }
@@ -36,12 +34,14 @@ export class MoviesTabComponent implements OnInit {
       .subscribe(datapopMovie => {
         for (let i = 0; i < 20; i++) {
           this.Movies.push(datapopMovie['results'][i]);
+          // console.log('movies = ', datapopMovie['results'][i].title);
+
         }
       });
   }
 
   togglePlaying() {
-    // this.dataMedia.getNowPlayingMovies()
+    // this.dataMedia.getNowPlayingMoviesURL()
     //   .subscribe(dataPlayingMovie => {
     //     for (let i = 0; i < 20; i++){
     //       this.
@@ -50,7 +50,13 @@ export class MoviesTabComponent implements OnInit {
   }
 
   toggleTopRated() {
-
+    this.dataMedia.getTopRatedMoviesURL()
+      .subscribe(dataTopMovie => {
+        for (let i = 0; i < 20; i++) {
+          this.Movies.push(dataTopMovie['results'][i]);
+          // console.log('movies = ', dataTopMovie['results'][i].title);
+        }
+      });
   }
 
   toggleUpcoming() {

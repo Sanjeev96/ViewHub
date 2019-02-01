@@ -15,19 +15,19 @@
         <br>
         <div class="container col-md-12">
           <div class="row">
-            <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of Movies | keyvalue; let i = index">
+            <div class="col-sm-9 col-md-9 " *ngFor="let Movie of Movies | keyvalue; let i = index">
               <div class="list-group-item shadow canvas contentAttr">
                 <span>
                   <div>
-                    <img src="http://image.tmdb.org/t/p/w185/{{popMovie.value.poster_path}}" style="height: 380px"
+                    <img src="http://image.tmdb.org/t/p/w185/{{Movie.value.poster_path}}" style="height: 380px"
                       class="pull-left pointer">
-                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview}}</mat-card>
+                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{Movie.value.overview}}</mat-card>
                     <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
                       <mat-list class="list-padding-Mtab">
-                        <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title}}</mat-list-item>
-                        <mat-list-item class="pointHeadings">Release date: {{popMovie.value.release_date}}</mat-list-item>
-                        <mat-list-item class="pointHeadings">Genre: {{popMovie.value.genre_ids}}</mat-list-item>
-                        <mat-list-item class="pointHeadings">Rating: {{popMovie.value.vote_average}}</mat-list-item>
+                        <mat-list-item #titleText class="pointHeadings">{{Movie.value.original_title}}</mat-list-item>
+                        <mat-list-item class="pointHeadings">Release date: {{Movie.value.release_date}}</mat-list-item>
+                        <mat-list-item class="pointHeadings">Genre: {{Movie.value.genre_ids}}</mat-list-item>
+                        <mat-list-item class="pointHeadings">Rating: {{Movie.value.vote_average}}</mat-list-item>
                         <mat-list-item class="pointHeadings"></mat-list-item>
                         <mat-list-item class="pointHeadings">
                           <mat-slide-toggle (click)="toggleWatch(i)">Add to watch</mat-slide-toggle>
