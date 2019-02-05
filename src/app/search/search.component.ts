@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
 
     if (search == null || search == '') {
       alert('Please Enter Search');
-    } 
+    }
     else {
       this.searchRequestURL = this.search_Urlpt1 + search + this.search_Urlpt2
       return this.http.get(this.searchRequestURL)

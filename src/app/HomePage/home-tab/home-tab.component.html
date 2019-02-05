@@ -10,11 +10,10 @@
               </span>
             </div>
             <div class="col-8">
-              <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item>Day</button>
-                <button mat-menu-item>Week</button>
-              </mat-menu>
+              <mat-button-toggle-group>
+                  <mat-button-toggle (click)="getTrendingMoviesbyDay()">Day</mat-button-toggle>&nbsp;
+                  <mat-button-toggle (click)="getTrendingMoviesbyWeek()">Week</mat-button-toggle>&nbsp;
+                </mat-button-toggle-group>
             </div>
           </div>
         </div>
@@ -49,11 +48,10 @@
                   </span>
                 </div>
                 <div class="col-8">
-                  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item>Day</button>
-                    <button mat-menu-item>Week</button>
-                  </mat-menu>
+                    <mat-button-toggle-group>
+                        <mat-button-toggle (click)="getTrendingTVbyDay()">Day tv</mat-button-toggle>&nbsp;
+                        <mat-button-toggle (click)="getTrendingTVbyWeek()">Week tv</mat-button-toggle>&nbsp;
+                      </mat-button-toggle-group>
                 </div>
               </div>
             </div>

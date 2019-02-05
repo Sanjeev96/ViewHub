@@ -8,12 +8,10 @@ import { DataService } from 'src/app/data.service';
   styleUrls: ['./home-tab.component.scss']
 })
 export class HomeTabComponent implements OnInit {
-
-
   public newsMovie = 'Trending Movies';
   public newsTvshows = 'Trending Shows';
   public baseImageURL = 'http://image.tmdb.org/t/p/w185/';
-  public results: any[]
+  public results: any[];
 
   public trendingMovies: any = [];
   public trendingTvShows: any = [];
@@ -24,43 +22,56 @@ export class HomeTabComponent implements OnInit {
   public toggleMovieOverview: boolean = false;
   public selectedTVIndex: number;
 
-
-  constructor(private dataMedia: DataService) { }
+  constructor(private dataMedia: DataService) {}
 
   ngOnInit() {
-    this.getTrendingMovies();
-    this.getTrendingTV();
+    this.getTrendingMoviesbyWeek();
+    this.getTrendingTVbyWeek();
   }
 
-  getTrendingMovies() {
-    this.dataMedia.getTrendingMoviesURL()
-      .subscribe(dataM => {
-        for (let i = 0; i < 10; i++) {
-          this.trendingMovies.push(dataM['results'][i]);
-
-
-          // console.log('tv shows top 5 -- ', dataM['results'][i].genre_ids);
-        }
-      });
+  // Trending Movies
+  getTrendingMoviesbyWeek() {
+    this.dataMedia.getTrendingMoviesbyWeekURL().subscribe(dataM => {
+      for (let i = 0; i < 10; i++) {
+        this.trendingMovies.splice(i);
+        this.trendingMovies.push(dataM['results'][i]);
+      }
+    });
   }
 
-  getTrendingTV() {
-    this.dataMedia.getTrendingTvShowsURL()
-      .subscribe(dataTV => {
-        for (let i = 0; i < 10; i++) {
-          this.trendingTvShows.push(dataTV['results'][i]);
-
-
-          // console.log('Movies 5 -- ', dataTV['results'][i].original_name);
-        }
-      });
+  getTrendingMoviesbyDay() {
+    this.dataMedia.getTrendingMoviesbyDayURL().subscribe(dataM => {
+      for (let i = 0; i < 10; i++) {
+        this.trendingMovies.splice(i);
+        this.trendingMovies.push(dataM['results'][i]);
+      }
+    });
   }
 
+  // trendingTVshows
+  getTrendingTVbyWeek() {
+    this.dataMedia.getTrendingTvShowsbyWeekURL().subscribe(dataTV => {
+      for (let i = 0; i < 10; i++) {
+        this.trendingTvShows.splice(i);
+        this.trendingTvShows.push(dataTV['results'][i]);
+      }
+    });
+  }
+
+  getTrendingTVbyDay() {
+    this.dataMedia.getTrendingTvShowsbyDayURL().subscribe(dataM => {
+      for (let i = 0; i < 10; i++) {
+        this.trendingTvShows.splice(i);
+        this.trendingTvShows.push(dataM['results'][i]);
+      }
+    });
+  }
+
+  // Showing and hiding descriptions
   showMovieOverviewBtn(i) {
     if (this.selectedMovieIndex !== i) {
       this.selectedMovieIndex = i;
       this.toggleMovieOverview = true;
-
     }
   }
   hideMovieOverviewBtn() {
@@ -72,7 +83,6 @@ export class HomeTabComponent implements OnInit {
     if (this.selectedTVIndex !== i) {
       this.selectedTVIndex = i;
       this.toggleTVOverview = true;
-
     }
   }
   hideTVOverviewBtn() {
@@ -80,4 +90,3 @@ export class HomeTabComponent implements OnInit {
     this.selectedTVIndex = null;
   }
 }
-
