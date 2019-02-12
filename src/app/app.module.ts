@@ -10,6 +10,7 @@ import { MoviePageComponent } from './Movies/movie-page/movie-page.component';
 import { TVShowPageComponent } from './TVShows/tvshow-page/tvshow-page.component';
 import { SearchComponent } from './search/search.component';
 import { WatchListComponent } from './watch-list/watch-list.component';
+import { TruncatePipe } from './truncate.pipe';
 
 
 
@@ -20,7 +21,8 @@ import { WatchListComponent } from './watch-list/watch-list.component';
     MoviePageComponent,
     TVShowPageComponent,
     SearchComponent,
-    WatchListComponent
+    WatchListComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

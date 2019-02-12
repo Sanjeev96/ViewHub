@@ -15,7 +15,7 @@
         <br>
         <div class="container col-md-12">
           <div class="row">
-            <div class="col-sm-9 col-md-9 " *ngFor="let popMovie of Movies | keyvalue; let i = index">
+            <div class="col-sm-10 col-md-10 " *ngFor="let popMovie of Movies | keyvalue; let i = index">
               <div class="list-group-item shadow canvas contentAttr">
                 <span>
                   <div>
@@ -24,7 +24,7 @@
                     <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview}}</mat-card>
                     <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
                       <mat-list class="list-padding-Mtab">
-                        <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title}}</mat-list-item>
+                        <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title | uppercase}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Release date: {{popMovie.value.release_date}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Genre: {{popMovie.value.genre_ids}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Rating: {{popMovie.value.vote_average}}</mat-list-item>
@@ -41,7 +41,6 @@
               </div>
               <br>
             </div>
-            <div class="col-sm-1 col-md-1"></div>
             <app-watch-list [movieTitle_I]="movieTitle"></app-watch-list>
             <!-- <p >test text</p> -->
           </div>
