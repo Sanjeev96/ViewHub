@@ -11,17 +11,17 @@
               <!-- <mat-button-toggle (click)="togglePlaying()">Now Playing</mat-button-toggle>&nbsp; -->
             </mat-button-toggle-group>
           </span>
-        </div>
+
         <br>
         <div class="container col-md-12">
           <div class="row">
-            <div class="col-sm-10 col-md-10 " *ngFor="let popMovie of Movies | keyvalue; let i = index">
-              <div class="list-group-item shadow canvas contentAttr">
+            <div class="col-sm-10 col-md-12" *ngFor="let popMovie of Movies | keyvalue; let i = index">
+              <div class="list-group-item shadow canvas contentAttr pointer" (click)=onSelectMovie(i)>
                 <span>
                   <div>
                     <img src="http://image.tmdb.org/t/p/w185/{{popMovie.value.poster_path}}" style="height: 380px"
                       class="pull-left pointer">
-                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview}}</mat-card>
+                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview }}</mat-card>
                     <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
                       <mat-list class="list-padding-Mtab">
                         <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title | uppercase}}</mat-list-item>
@@ -41,11 +41,15 @@
               </div>
               <br>
             </div>
-            <app-watch-list [movieTitle_I]="movieTitle"></app-watch-list>
+            <!-- <app-watch-list [movieTitle_I]="movieTitle"></app-watch-list> -->
             <!-- <p >test text</p> -->
           </div>
         </div>
+      </div>
       </mat-card>
+        <div>
+          <router-outlet></router-outlet>
+        </div>
     </div>
   </section>
 </div>

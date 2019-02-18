@@ -3,35 +3,36 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { HttpClientModule } from '@angular/common/http';
-import { MoviePageComponent } from './Movies/movie-page/movie-page.component';
-import { TVShowPageComponent } from './TVShows/tvshow-page/tvshow-page.component';
 import { SearchComponent } from './search/search.component';
 import { WatchListComponent } from './watch-list/watch-list.component';
 import { TruncatePipe } from './truncate.pipe';
-
+import { SingleMovieComponent } from './Movies/single-movie/single-movie.component';
+import { SingleTvShowComponent } from './TVShows/single-tv-show/single-tv-show.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
-    MoviePageComponent,
-    TVShowPageComponent,
     SearchComponent,
     WatchListComponent,
-    TruncatePipe
+    TruncatePipe,
+    SingleMovieComponent,
+    SingleTvShowComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
