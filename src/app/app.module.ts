@@ -12,6 +12,7 @@ import { TruncatePipe } from './truncate.pipe';
 import { SingleMovieComponent } from './Movies/single-movie/single-movie.component';
 import { SingleTvShowComponent } from './TVShows/single-tv-show/single-tv-show.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     WatchListComponent,
     TruncatePipe,
     SingleMovieComponent,
-    SingleTvShowComponent
+    SingleTvShowComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-home-tab',
@@ -22,7 +22,7 @@ export class HomeTabComponent implements OnInit {
   public toggleMovieOverview: boolean = false;
   public selectedTVIndex: number;
 
-  constructor(private dataMedia: DataService) {}
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
     this.getTrendingMoviesbyWeek();
@@ -31,7 +31,7 @@ export class HomeTabComponent implements OnInit {
 
   // Trending Movies
   getTrendingMoviesbyWeek() {
-    this.dataMedia.getTrendingMoviesbyWeekURL().subscribe(dataM => {
+    this.dataService.getTrendingMoviesbyWeekURL().subscribe(dataM => {
       for (let i = 0; i < 10; i++) {
         this.trendingMovies.splice(i);
         this.trendingMovies.push(dataM['results'][i]);
@@ -40,7 +40,7 @@ export class HomeTabComponent implements OnInit {
   }
 
   getTrendingMoviesbyDay() {
-    this.dataMedia.getTrendingMoviesbyDayURL().subscribe(dataM => {
+    this.dataService.getTrendingMoviesbyDayURL().subscribe(dataM => {
       for (let i = 0; i < 10; i++) {
         this.trendingMovies.splice(i);
         this.trendingMovies.push(dataM['results'][i]);
@@ -50,7 +50,7 @@ export class HomeTabComponent implements OnInit {
 
   // trendingTVshows
   getTrendingTVbyWeek() {
-    this.dataMedia.getTrendingTvShowsbyWeekURL().subscribe(dataTV => {
+    this.dataService.getTrendingTvShowsbyWeekURL().subscribe(dataTV => {
       for (let i = 0; i < 10; i++) {
         this.trendingTvShows.splice(i);
         this.trendingTvShows.push(dataTV['results'][i]);
@@ -59,7 +59,7 @@ export class HomeTabComponent implements OnInit {
   }
 
   getTrendingTVbyDay() {
-    this.dataMedia.getTrendingTvShowsbyDayURL().subscribe(dataM => {
+    this.dataService.getTrendingTvShowsbyDayURL().subscribe(dataM => {
       for (let i = 0; i < 10; i++) {
         this.trendingTvShows.splice(i);
         this.trendingTvShows.push(dataM['results'][i]);

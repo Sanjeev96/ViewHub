@@ -5,7 +5,7 @@ import {
   ViewChildren,
   QueryList
 } from '@angular/core';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/services/data.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -21,7 +21,7 @@ export class MoviesTabComponent implements OnInit {
   @ViewChildren('titleText') titleText: QueryList<ElementRef>;
 
   constructor(
-    private dataMedia: DataService,
+    private dataService: DataService,
     private activeRoute: ActivatedRoute,
     private router: Router
   ) {}
@@ -35,7 +35,7 @@ export class MoviesTabComponent implements OnInit {
   }
 
   togglePopular() {
-    this.dataMedia.getPopularMoviesURL().subscribe(datapopMovie => {
+    this.dataService.getPopularMoviesURL().subscribe(datapopMovie => {
       for (let i = 0; i < 20; i++) {
         this.Movies.splice(i);
         this.Movies.push(datapopMovie['results'][i]);
@@ -47,7 +47,7 @@ export class MoviesTabComponent implements OnInit {
   togglePlaying() {}
 
   toggleTopRated() {
-    this.dataMedia.getTopRatedMoviesURL().subscribe(dataTopMovie => {
+    this.dataService.getTopRatedMoviesURL().subscribe(dataTopMovie => {
       for (let i = 0; i < 20; i++) {
         this.Movies.splice(i);
         this.Movies.push(dataTopMovie['results'][i]);
@@ -57,7 +57,7 @@ export class MoviesTabComponent implements OnInit {
   }
 
   toggleUpcoming() {
-    this.dataMedia.getUpcomingMoviesURL().subscribe(dataUpcomingMovie => {
+    this.dataService.getUpcomingMoviesURL().subscribe(dataUpcomingMovie => {
       for (let i = 0; i < 20; i++) {
         this.Movies.splice(i);
         this.Movies.push(dataUpcomingMovie['results'][i]);
