@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import flat from 'array.prototype.flat';
 
 @Component({
   selector: 'app-search-results',
@@ -7,19 +8,24 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-  public fields = {
+  public results: any = [];
+  public search = {
     title: '',
     rda: '',
     desc: ''
   };
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.searchHandOver.subscribe(results => // Listen for when search is clicked through data service Subject
-      console.log('search page data results = ', ...results)
-    );
-
+    this.getSearchResults();
   }
 
+  getSearchResults() {
+    this.dataService.searchHandOver.subscribe(data => {
+      // Listen for when search is clicked through data service Subject
+      this.results.push(...data);
+    });
+    console.log(this.results);
+  }
 }
