@@ -19,13 +19,13 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit() {
     this.getSearchResults();
+console.log(this.results);
+
   }
 
   getSearchResults() {
-    this.dataService.searchHandOver.subscribe(data => {
-      // Listen for when search is clicked through data service Subject
+    this.dataService.searchHandOver.subscribe(data => {// Listen for when search is clicked through data service Subject
       this.results.push(...data);
     });
-    console.log(this.results);
   }
 }
