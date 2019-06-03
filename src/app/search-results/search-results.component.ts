@@ -9,21 +9,24 @@ import flat from 'array.prototype.flat';
 })
 export class SearchResultsComponent implements OnInit {
   public results: any = [];
+  publicSearchTxt: any
   public search = {
     title: '',
     rda: '',
     desc: ''
   };
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) {
+
+  }
 
   ngOnInit() {
     this.getSearchResults();
-console.log(this.results);
 
   }
 
   getSearchResults() {
+    this.dataService.searchSTRhandOver.subscribe(title => this.publicSearchTxt = title);
     this.dataService.searchHandOver.subscribe(data => {// Listen for when search is clicked through data service Subject
       this.results.push(...data);
     });

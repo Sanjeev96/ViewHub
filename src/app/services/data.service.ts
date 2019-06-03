@@ -10,6 +10,7 @@ export class DataService {
   public APIKEY = '10472e5b920186c224c45d801066d9aa';
 
   public searchHandOver = new Subject<any>();
+  public searchSTRhandOver = new Subject<any>();
 
   // home Tab
   public moviesTrending_ByDay_Url =

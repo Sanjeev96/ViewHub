@@ -14,17 +14,19 @@ export class SearchComponent implements OnInit {
   public search_Urlpt2 = '&page=1&include_adult=false';
   public searchRequestURL: any;
   public searchRequsestData: any = [];
+  public search: string;
   constructor(public dataService: DataService, private http: HttpClient) {}
 
   ngOnInit() {}
 
   searchBtn() {
-    const search = this.searchInput.nativeElement.value;
+    this.dataService.searchSTRhandOver.next(this.search);
+     this.search = this.searchInput.nativeElement.value;
 
-    if (search == null || search === '') {
+    if (this.search == null || this.search === '') {
       alert('Please Enter Search');
     } else {
-      this.searchRequestURL = this.search_Urlpt1 + search + this.search_Urlpt2;
+      this.searchRequestURL = this.search_Urlpt1 + this.search + this.search_Urlpt2;
       return this.http.get(this.searchRequestURL).subscribe(searchData => {
         this.searchRequsestData.push(...searchData['results']);
         this.dataService.searchHandOver.next(this.searchRequsestData);
