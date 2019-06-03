@@ -16,7 +16,6 @@ export class WatchListComponent implements OnInit {
   }
 
   ngOnChanges() {
-    console.log(this.movieTitle_I);
 
   }
 

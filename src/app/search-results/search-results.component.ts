@@ -9,7 +9,7 @@ import flat from 'array.prototype.flat';
 })
 export class SearchResultsComponent implements OnInit {
   public results: any = [];
-  publicSearchTxt: any
+  publicSearchTxt: string;
   public search = {
     title: '',
     rda: '',
@@ -26,7 +26,7 @@ export class SearchResultsComponent implements OnInit {
   }
 
   getSearchResults() {
-    this.dataService.searchSTRhandOver.subscribe(title => this.publicSearchTxt = title);
+    this.dataService.searchSTRhandOver.subscribe(title => {this.publicSearchTxt = title;});
     this.dataService.searchHandOver.subscribe(data => {// Listen for when search is clicked through data service Subject
       this.results.push(...data);
     });

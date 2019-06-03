@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -15,12 +16,11 @@ export class SearchComponent implements OnInit {
   public searchRequestURL: any;
   public searchRequsestData: any = [];
   public search: string;
-  constructor(public dataService: DataService, private http: HttpClient) {}
+  constructor(public dataService: DataService, private http: HttpClient, private router: Router) {}
 
   ngOnInit() {}
 
   searchBtn() {
-    this.dataService.searchSTRhandOver.next(this.search);
      this.search = this.searchInput.nativeElement.value;
 
     if (this.search == null || this.search === '') {
@@ -30,7 +30,9 @@ export class SearchComponent implements OnInit {
       return this.http.get(this.searchRequestURL).subscribe(searchData => {
         this.searchRequsestData.push(...searchData['results']);
         this.dataService.searchHandOver.next(this.searchRequsestData);
+        this.dataService.searchSTRhandOver.next(this.search); // placed string transfer here because anywhere else i had to click search btn twice to display search text in label for search results
       });
     }
+
   }
 }
