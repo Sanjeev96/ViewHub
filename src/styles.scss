@@ -5,15 +5,24 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 
-.canvas {
-  background-color: #efefef;
+
+.move-tv-card {
+  left: 150px;
+}
+
+list-group-item {
+  border-radius: 12px;
 }
 
 .pad {
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  // background-color: #efefef;
+}
+
+
+mat-button-toggle-group {
+  left: 500px;
 }
 
 .mainCardAnimation {
@@ -22,19 +31,22 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.9s;
+  background-image: linear-gradient(to right, #dd1818, #333333);
+
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+      overflow-x: hidden;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-    overflow-x: hidden;
-  }
 
-  100% {
-    opacity: 1;
-  }
-}
 
 .mainCardAnimationTV {
   opacity: 1;
@@ -42,19 +54,22 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.9s;
+  background-image: linear-gradient(to right, #dd1818, #333333);
+
+  @keyframes fadeInOpacityTV {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+      overflow-x: hidden;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
-@keyframes fadeInOpacityTV {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-    overflow-x: hidden;
-  }
 
-  100% {
-    opacity: 1;
-  }
-}
 
 .mainCardAnimationMovie {
   opacity: 1;
@@ -62,19 +77,22 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 0.9s;
+  background-image: linear-gradient(to right, #dd1818, #333333);
+
+  @keyframes fadeInOpacityMovie {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+      overflow-x: hidden;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
-@keyframes fadeInOpacityMovie {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-    overflow-x: hidden;
-  }
 
-  100% {
-    opacity: 1;
-  }
-}
 
 .spacing {
   width: 2px;
@@ -100,7 +118,6 @@
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  // background-color: #efefef;
 }
 
 .list-group-item {
@@ -135,7 +152,6 @@
 }
 
 .DescPos {
-  // position: absolute;
   float: top;
   top: 24px;
   right: 2px;

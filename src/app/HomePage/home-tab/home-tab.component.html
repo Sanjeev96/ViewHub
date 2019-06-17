@@ -1,7 +1,7 @@
-<div class="pad canvas">
+<div class="pad">
   <section class="container col-md-12">
     <div class="row">
-      <mat-card class="mainCardAnimationMovie col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <mat-card class="mainCardAnimationMovie  col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="container col-sm-12 col-md-12">
           <div class="row">
             <div class="col-4">
@@ -19,12 +19,12 @@
         </div>
         <br>
         <div *ngFor="let trendMovie of trendingMovies | keyvalue; let i = index">
-          <div class="shadow list-group-item clearfix canvas">
+          <div class="shadow list-group-item clearfix">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendMovie.value.poster_path}}" style="max-height: 200px"
                 class="pull-left pointer">
               <i *ngIf="!toggleMovieOverview" (click)="showMovieOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
-              <i *ngIf="toggleMovieOverview" (click)="hideMovieOverviewBtn ()" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
+              <i *ngIf="toggleMovieOverview" (click)="hideMovieOverviewBtn (i)" class="fa fa-minus-circle pull-right pointer btn-outline-info infoIconAttr"></i>
               <ul class="list-padding">
                 <li><span class="pointHeadings"> Release Date:</span> {{trendMovie.value.release_date}}</li>
                 <li><span class="pointHeadings">Language:</span> {{trendMovie.value.original_language}}</li>
@@ -57,7 +57,7 @@
             </div>
         <br>
         <div *ngFor="let trendTV of trendingTvShows | keyvalue; let i = index;">
-          <div class="shadow list-group-item clearfix canvas">
+          <div class="shadow list-group-item clearfix">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendTV.value.poster_path}}" style="max-height: 200px" class="pull-left pointer">
               <i *ngIf="!toggleTVOverview" (click)="showTVOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>

@@ -15,22 +15,23 @@ export class SearchComponent implements OnInit {
   public search_Urlpt2 = '&page=1&include_adult=false';
   public searchRequestURL: any;
   public searchRequsestData: any = [];
-  public search: string;
+
   constructor(public dataService: DataService, private http: HttpClient, private router: Router) {}
 
   ngOnInit() {}
 
   searchBtn() {
-     this.search = this.searchInput.nativeElement.value;
+     const search = this.searchInput.nativeElement.value;
 
-    if (this.search == null || this.search === '') {
+    if (search == null || search === '') {
       alert('Please Enter Search');
     } else {
-      this.searchRequestURL = this.search_Urlpt1 + this.search + this.search_Urlpt2;
+      this.searchRequestURL = this.search_Urlpt1 + search + this.search_Urlpt2;
       return this.http.get(this.searchRequestURL).subscribe(searchData => {
         this.searchRequsestData.push(...searchData['results']);
         this.dataService.searchHandOver.next(this.searchRequsestData);
-        this.dataService.searchSTRhandOver.next(this.search); // placed string transfer here because anywhere else i had to click search btn twice to display search text in label for search results
+        this.dataService.searchSTRhandOver.next(search); 
+        // placed string transfer here because anywhere else i had to click search btn twice to display search text in label for search results
       });
     }
 

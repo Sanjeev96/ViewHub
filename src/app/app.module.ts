@@ -24,7 +24,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     TruncatePipe,
     SingleMovieComponent,
     SingleTvShowComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

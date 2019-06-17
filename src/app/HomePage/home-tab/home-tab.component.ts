@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, from } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
+import { Movie, Movies } from 'src/app/models/movie.model';
+import { TvShows } from 'src/app/models/tvShow.model';
 
 @Component({
   selector: 'app-home-tab',
@@ -31,44 +33,44 @@ export class HomeTabComponent implements OnInit {
 
   // Trending Movies
   getTrendingMoviesbyWeek() {
-    this.dataService.getTrendingMoviesbyWeekURL().subscribe(dataM => {
+    this.dataService.getTrendingMoviesbyWeekURL().subscribe((dataM: Movies) => {
       for (let i = 0; i < 10; i++) {
         this.trendingMovies.splice(i);
-        this.trendingMovies.push(dataM['results'][i]);
+        this.trendingMovies.push(dataM.results[i]);
       }
     });
   }
 
   getTrendingMoviesbyDay() {
-    this.dataService.getTrendingMoviesbyDayURL().subscribe(dataM => {
+    this.dataService.getTrendingMoviesbyDayURL().subscribe((dataM: Movies) => {
       for (let i = 0; i < 10; i++) {
         this.trendingMovies.splice(i);
-        this.trendingMovies.push(dataM['results'][i]);
+        this.trendingMovies.push(dataM.results[i]);
       }
     });
   }
 
   // trendingTVshows
   getTrendingTVbyWeek() {
-    this.dataService.getTrendingTvShowsbyWeekURL().subscribe(dataTV => {
+    this.dataService.getTrendingTvShowsbyWeekURL().subscribe((dataTV: TvShows) => {
       for (let i = 0; i < 10; i++) {
         this.trendingTvShows.splice(i);
-        this.trendingTvShows.push(dataTV['results'][i]);
+        this.trendingTvShows.push(dataTV.results[i]);
       }
     });
   }
 
   getTrendingTVbyDay() {
-    this.dataService.getTrendingTvShowsbyDayURL().subscribe(dataM => {
+    this.dataService.getTrendingTvShowsbyDayURL().subscribe((dataM: Movies) => {
       for (let i = 0; i < 10; i++) {
         this.trendingTvShows.splice(i);
-        this.trendingTvShows.push(dataM['results'][i]);
+        this.trendingTvShows.push(dataM.results[i]);
       }
     });
   }
 
   // Showing and hiding descriptions
-  showMovieOverviewBtn(i) {
+  showMovieOverviewBtn(i: number) {
     if (this.selectedMovieIndex !== i) {
       this.selectedMovieIndex = i;
       this.toggleMovieOverview = true;
@@ -79,7 +81,7 @@ export class HomeTabComponent implements OnInit {
     this.selectedMovieIndex = null;
   }
 
-  showTVOverviewBtn(i) {
+  showTVOverviewBtn(i: number) {
     if (this.selectedTVIndex !== i) {
       this.selectedTVIndex = i;
       this.toggleTVOverview = true;
