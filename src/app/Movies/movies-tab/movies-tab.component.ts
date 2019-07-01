@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Movies } from 'src/app/models/movie.model';
 
 @Component({
   selector: 'app-movies-tab',
@@ -35,11 +36,11 @@ export class MoviesTabComponent implements OnInit {
   }
 
   togglePopular() {
-    this.dataService.getPopularMoviesURL().subscribe(datapopMovie => {
+    this.dataService.getPopularMoviesURL().subscribe((datapopMovie: Movies) => {
       for (let i = 0; i < 20; i++) {
         this.Movies.splice(i);
-        this.Movies.push(datapopMovie['results'][i]);
-        // console.log('movies = ', datapopMovie['results'][i].title);
+        this.Movies.push(datapopMovie.results[i]);
+        console.log('genre id', datapopMovie);
       }
     });
   }
@@ -47,20 +48,19 @@ export class MoviesTabComponent implements OnInit {
   togglePlaying() {}
 
   toggleTopRated() {
-    this.dataService.getTopRatedMoviesURL().subscribe(dataTopMovie => {
+    this.dataService.getTopRatedMoviesURL().subscribe((dataTopMovie: Movies) => {
       for (let i = 0; i < 20; i++) {
         this.Movies.splice(i);
-        this.Movies.push(dataTopMovie['results'][i]);
-        // console.log('movies = ', dataTopMovie['results'][i].title);
+        this.Movies.push(dataTopMovie.results[i]);
       }
     });
   }
 
   toggleUpcoming() {
-    this.dataService.getUpcomingMoviesURL().subscribe(dataUpcomingMovie => {
+    this.dataService.getUpcomingMoviesURL().subscribe((dataUpcomingMovie: Movies) => {
       for (let i = 0; i < 20; i++) {
         this.Movies.splice(i);
-        this.Movies.push(dataUpcomingMovie['results'][i]);
+        this.Movies.push(dataUpcomingMovie.results[i]);
       }
     });
   }
@@ -69,12 +69,10 @@ export class MoviesTabComponent implements OnInit {
     this.movieTitle = this.titleText['_results'][index]['_element'][
       'nativeElement'
     ]['innerText'];
-    //  console.log(this.movieTitle);
   }
 
   onSelectMovie(index: number) {
     this.id = index;
-    console.log('ID of selected movies = ', this.id);
     this.router.navigate([this.id], { relativeTo: this.activeRoute });
   }
 }

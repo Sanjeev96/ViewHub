@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
+import { TvShows } from 'src/app/models/tvShow.model';
 
 @Component({
   selector: 'app-tv-show-tab',
@@ -19,10 +20,9 @@ export class TvShowTabComponent implements OnInit {
 
   getPopularTvShows() {
     this.dataService.getPopularTvShowsURL()
-    .subscribe(dataPopTV=> {
+    .subscribe((dataPopTV: TvShows) => {
       for (let i = 0; i < 20; i++) {
-        this.popularTvShows.push(dataPopTV['results'][i]);
-        // console.log('popular tv Shows = ', dataPopTV['results'][i].original_name);
+        this.popularTvShows.push(dataPopTV.results[i]);
         }
       });
 

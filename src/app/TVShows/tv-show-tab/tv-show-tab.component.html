@@ -15,8 +15,8 @@
         <br>
         <div class="col-md-12">
           <div class="row">
-            <div class="col-lg-9" *ngFor="let popTvShow of popularTvShows | keyvalue">
-              <div class="list-group-item shadow move-tv-card pointer" style="background-image: http://image.tmdb.org/t/p/w185/A30ZqEoDbchvE7mCZcSp6TEwB1Q.jpg">
+            <div class="offset-sm-1 col-sm-10" *ngFor="let popTvShow of popularTvShows | keyvalue">
+              <div class="list-group-item shadow  pointer" style="background-image: http://image.tmdb.org/t/p/w185/A30ZqEoDbchvE7mCZcSp6TEwB1Q.jpg">
                 <span>
                   <div>
                     <img src="http://image.tmdb.org/t/p/w185/{{popTvShow.value.poster_path}}" style="height: 380px"
@@ -25,8 +25,7 @@
                     <div class="col-sm-6 col-md-6">
                       <mat-list class="list-padding-Mtab">
                         <mat-list-item class="pointHeadings"></mat-list-item>
-                        <mat-list-item class="pointHeadings">1st air date: {{popTvShow.value.first_air_date}}</mat-list-item>
-                        <mat-list-item class="pointHeadings">Genre: {{popTvShow.value.genre_ids}}</mat-list-item>
+                        <mat-list-item class="pointHeadings">1st air date: {{popTvShow.value.first_air_date | date:'dd MMM yyyy'}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Rating: {{popTvShow.value.vote_average}}</mat-list-item>
                         <mat-list-item class="pointHeadings"></mat-list-item>
                         <mat-list-item class="pointHeadings">
