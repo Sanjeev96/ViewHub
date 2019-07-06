@@ -21,7 +21,7 @@
                   <div>
                     <img src="http://image.tmdb.org/t/p/w185/{{popMovie.value.poster_path}}" style="height: 380px"
                       class="pull-left pointer">
-                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview |  truncate }}</mat-card>
+                    <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview |  truncate: 200 }}</mat-card>
                     <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
                       <mat-list class="list-padding-Mtab">
                         <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title | uppercase}}</mat-list-item>
