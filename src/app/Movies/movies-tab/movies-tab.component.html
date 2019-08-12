@@ -24,7 +24,7 @@
                     <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview |  truncate: 200 }}</mat-card>
                     <div class="col-sm-6 col-md-6">
                       <mat-list class="list-padding-Mtab">
-                        <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title | uppercase}}</mat-list-item>
+                        <!-- <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title | uppercase}}</mat-list-item> -->
                         <mat-list-item class="pointHeadings">Release date: {{popMovie.value.release_date | date:'dd MMM yyyy'}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Rating: {{popMovie.value.vote_average}}</mat-list-item>
                         <mat-list-item class="pointHeadings"></mat-list-item>
