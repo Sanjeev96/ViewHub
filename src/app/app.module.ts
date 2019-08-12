@@ -13,6 +13,7 @@ import { SingleMovieComponent } from './Movies/single-movie/single-movie.compone
 import { SingleTvShowComponent } from './TVShows/single-tv-show/single-tv-show.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { RequestFormComponent } from './request-form/request-form.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     SingleMovieComponent,
     SingleTvShowComponent,
     SearchResultsComponent,
+    RequestFormComponent,
   ],
   imports: [
     BrowserModule,
