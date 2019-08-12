@@ -67,7 +67,9 @@ mat-button-toggle-group {
   }
 }
 
-
+.item-card-colour {
+  background-color: #6DD5FA;
+}
 
 .mainCardAnimationMovie {
   opacity: 1;
@@ -135,7 +137,7 @@ mat-button-toggle-group {
   }
 
   .DescAttr {
-    color: #117a8b;
+    color: white;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
   }
@@ -155,7 +157,8 @@ mat-button-toggle-group {
   float: top;
   top: 24px;
   margin-right: 90px;
-  //background-color: #efefef;
+  background-color: #2980B9;
+  color: white;
   font-size: 20px;
 }
 

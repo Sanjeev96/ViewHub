@@ -16,13 +16,13 @@
         <div class="container col-md-12">
           <div class="row">
             <div class="offset-sm-1 col-sm-10 " *ngFor="let popMovie of Movies | keyvalue; let i = index">
-              <div class="list-group-item shadow  pointer" (click)=onSelectMovie(i)>
+              <div class="list-group-item shadow item-card-colour pointer" (click)=onSelectMovie(i)>
                 <span>
                   <div>
                     <img src="http://image.tmdb.org/t/p/w185/{{popMovie.value.poster_path}}" style="height: 380px"
                       class="pull-left pointer">
                     <mat-card class="col-sm-6 col-md-6 pull-right DescPos"> {{popMovie.value.overview |  truncate: 200 }}</mat-card>
-                    <div class="col-sm-6 col-md-6" style="backgroundColor: Blue">
+                    <div class="col-sm-6 col-md-6">
                       <mat-list class="list-padding-Mtab">
                         <mat-list-item #titleText class="pointHeadings">{{popMovie.value.original_title | uppercase}}</mat-list-item>
                         <mat-list-item class="pointHeadings">Release date: {{popMovie.value.release_date | date:'dd MMM yyyy'}}</mat-list-item>

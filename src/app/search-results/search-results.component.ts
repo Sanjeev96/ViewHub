@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import flat from 'array.prototype.flat';
 
 @Component({
   selector: 'app-search-results',
@@ -8,7 +7,7 @@ import flat from 'array.prototype.flat';
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
-  public results: any = [];
+  public results: any = [];s
   publicSearchTxt: string;
   public search = {
     title: '',

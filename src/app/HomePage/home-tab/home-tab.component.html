@@ -19,7 +19,7 @@
         </div>
         <br>
         <div *ngFor="let trendMovie of trendingMovies | keyvalue; let i = index">
-          <div class="shadow list-group-item clearfix">
+          <div class="shadow list-group-item item-card-colour clearfix">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendMovie.value.poster_path}}" style="max-height: 200px"
                 class="pull-left pointer">
@@ -57,7 +57,7 @@
             </div>
         <br>
         <div *ngFor="let trendTV of trendingTvShows | keyvalue; let i = index;">
-          <div class="shadow list-group-item clearfix">
+          <div class="shadow list-group-item item-card-colour clearfix">
             <span>
               <img src="http://image.tmdb.org/t/p/w185/{{trendTV.value.poster_path}}" style="max-height: 200px" class="pull-left pointer">
               <i *ngIf="!toggleTVOverview" (click)="showTVOverviewBtn(i)" class="fa fa-info-circle pull-right pointer btn-outline-info infoIconAttr"></i>
