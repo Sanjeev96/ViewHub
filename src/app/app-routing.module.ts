@@ -5,9 +5,11 @@ import { HomeTabComponent } from './HomePage/home-tab/home-tab.component';
 import { TvShowTabComponent } from './TVShows/tv-show-tab/tv-show-tab.component';
 import { SingleMovieComponent } from './Movies/single-movie/single-movie.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { RequestFormComponent } from './request-form/request-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: 'request-form', component: RequestFormComponent},
   { path: 'home', component: HomeTabComponent },
   { path: 'tvShows', component: TvShowTabComponent },
   {path: 'results', component: SearchResultsComponent},
